@@ -1,6 +1,6 @@
 <?php
 
-    require ('config/config.php');
+    require ('home/home.php');
 
 ?>
 
@@ -45,4 +45,4 @@
     </section>
     
 </body>
-</html>
+</html> 

@@ -37,5 +37,9 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 $search = json_decode($response);
+    
+echo'<pre>';
+print_r($search);
+echo'</pre>';
 
-
+}

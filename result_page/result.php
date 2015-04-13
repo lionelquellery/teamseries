@@ -37,32 +37,24 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 $number_episodes = json_decode($response);
-
-$ct = 0;
-
 $counter = $number_episodes->seasons;
 
-// Moyenne note saison
+// PERSONNAGES
 
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, "http://api.themoviedb.org/3/tv/".$key_series."/season/0".$key);
+curl_setopt($ch, CURLOPT_URL, "http://api.themoviedb.org/3/tv/".$key_series."/credits".$key);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($ch, CURLOPT_HEADER, FALSE);
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    "Accept: application/json"
+  "Accept: application/json"
 ));
 
 $response = curl_exec($ch);
 curl_close($ch);
 
-$note_saison = json_decode($response);
-
-//    echo '<pre>';
-//    print_r($note_saison);
-//    echo '</pre>';
-
+$characters = json_decode($response);
 ?>
 
 
@@ -77,7 +69,9 @@ $note_saison = json_decode($response);
         <script>
             // Génaration tableau nombre de saison = nombre de valeur / nombre d'épisode dans la saison la valeur.
             var saison_episode = [
-                <?php foreach($counter as $_episodes): 
+                <?php
+                    $ct = 0;
+                foreach($counter as $_episodes): 
                     $ct = $ct+1;
                     $episode =$ct-1;?>
                 <?= $counter[$episode]->episode_count ?>,
@@ -109,7 +103,22 @@ $note_saison = json_decode($response);
                 <?php endforeach; ?>
             ];
 
-            <?php } ?>
+            <?php } 
+            
+            
+               
+            ?>            
         </script>
+        
+<!--        Generation chaque personnages série + image de l'acteur-->
+        <?php foreach($characters->cast as $_character): ?>
+            <div>
+                <img src="http://image.tmdb.org/t/p/w300<?= $_character->profile_path ?>" alt="">
+            </div>
+            <div>
+                <?= $_character->character?>
+            </div>
+        <?php endforeach; ?>
+        
     </body>
 </html>

@@ -4,11 +4,7 @@
 $ch = curl_init();
 
 $key = '?api_key=d0a923b609a899bbb5a493dc98fe31bd';
-<<<<<<< HEAD:Result page/result.php
-$key_series = '1399';
-=======
 $key_series = $_GET['id'];
->>>>>>> origin/master:raw_php/result_page/config.php
 
 curl_setopt($ch, CURLOPT_URL, "http://api.themoviedb.org/3/tv/".$key_series."/changes".$key);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -57,34 +53,4 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 $response = curl_exec($ch);
 curl_close($ch);
 
-<<<<<<< HEAD:Result page/result.php
-//    echo '<pre>';
-//    print_r($counter);
-//    echo '</pre>';
-
-?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body onload="addElement()">
-    <script>
-        
-        
-    <?php foreach($counter as $_episodes): 
-        $ct = $ct+1;
-        $episode =$ct-1;?>
-        var nombre_episode_saison<?=$ct?> = <?= $counter[$episode]->episode_count ?>;
-    <?php endforeach; ?>
-        var nombre_saison =<?= $ct?>;
-
-    </script>
-</body>
-</html>
-=======
 $characters = json_decode($response);
->>>>>>> origin/master:raw_php/result_page/config.php

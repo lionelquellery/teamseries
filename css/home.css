@@ -134,9 +134,18 @@ section#panel-search{
 }
 
 .media__body h2 { margin-top: 0; }
+
 .media__body p { margin-bottom: 1.5em; }
+
 .media:nth-child(2) .media__body { background: rgba(146, 41, 185, 0.7); }
 .media:nth-child(3) .media__body { background: rgba(185, 41, 128, 0.7); }
 .media:nth-child(4) .media__body { background: rgba(185, 50, 41, 0.7); }
 .media:nth-child(5) .media__body { background: rgba(185, 146, 41, 0.7); }
 .media:nth-child(6) .media__body { background: rgba(128, 185, 41, 0.7); }
+svg {max-width: 95%;max-height: 95%;position: absolute;top: 0;left: 0;right: 0;bottom: 150px;margin: auto;}
+svg path {fill-opacity: 0;stroke: #fff;stroke-width: 1;stroke-dasharray: 470;stroke-dashoffset: 470;-webkit-animation: home 5s 1;-webkit-animation-fill-mode: forwards;}
+.strokedev{-webkit-animation: developer 5s 1;-webkit-animation-fill-mode: forwards;}
+.strokedes{-webkit-animation: designer 5s 1;-webkit-animation-fill-mode: forwards;}
+@-webkit-keyframes home {100% {stroke-dashoffset: 0;fill:#fff; fill-opacity:1;}}
+@-webkit-keyframes developer {100% {stroke-dashoffset: 0;fill:#CB0613; fill-opacity:1;stroke:transparent;}}
+@-webkit-keyframes designer {100% {stroke-dashoffset: 0;fill:rgba(255,255,255,0.5); fill-opacity:1;stroke:transparent;}}

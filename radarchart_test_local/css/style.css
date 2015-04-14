@@ -1,8 +1,0 @@
-body{background: #202020; color: white;}
-#canvas_season {position: absolute; width: 600px; height: 600px;  border-radius: 300px; border: solid 1px #005459;  display:block; margin: auto;
- -webkit-transform: scale(0.55);
-}
-#canvas_episode {position: absolute; width: 600px; height: 600px; border-radius: 300px; border: solid 1px #001314;  display:block; margin: auto;}
-.canvas_wrapper{margin: auto; width: 600px; height: 600px; position: relative; margin-top: 5%; -webkit-transform: rotateZ(180deg);}
-
-.points{width: 12px; height: 12px; border-radius: 10px; background: white; background-color: white; position:absolute; z-index: 100;}

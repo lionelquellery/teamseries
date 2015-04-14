@@ -35,8 +35,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 $response = curl_exec($ch);
 curl_close($ch);
 
-$number_episodes = json_decode($response);
-$counter = $number_episodes->seasons;
+$serie = json_decode($response);
+$counter = $serie->seasons;
 
 // PERSONNAGES
 
@@ -85,18 +85,7 @@ $saison_data = array();
                         $fill = $episode_average->vote_average;
                         $saison_data[$x] += array_fill(0, $compteur, $fill);
                     endforeach;
-
                 }
 
-                $data = json_decode($saison_data);
-
-var_dump($data);
-
-header('Content-Type:application/json');
-
-
-
-
-             
-            
-           
+$data = json_encode($saison_data);
+  

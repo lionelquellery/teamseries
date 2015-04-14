@@ -9,7 +9,6 @@ var w = 780,
 
 function draw(id) {
 	var data = generateData(),
-	other_data = generateOtherData(),
 	margin = 30,
 	y = d3.scale.linear().domain([0, d3.max(data)]).range([0 + margin, h - 60]),
 	x = d3.scale.linear().domain([0, data.length]).range([0 + margin, w + 50]),
@@ -102,7 +101,7 @@ function draw(id) {
 		title: function() {
 		var d = this.__data__;
 		var pDate = d.date;
-		return 'Metric: ' + Math.floor(d); 
+		return 'Saison: ' + data.push(l); 
 		}
 	});
 }
@@ -118,15 +117,12 @@ function removeData(id) {
 
 function generateData() {
 	var data = [];
-	for (var i = 0, l = 12; i < l; i++) {
+	for (var i = 0, l = 10; i < l; i++) {
 	    data.push(Math.round(Math.random() * l))
 	}
 	return data;
 }
-function generateOtherData() {
-	var other_data = [3,9,3,1,5,4,4,5,6,9,4,2];
-	return other_data;
-}
+
 function subMetricChange() {
 	$('.benchmarks-checkbox').on('change', function(e) {
 		id = $(this).attr("id");

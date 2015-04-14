@@ -11,7 +11,7 @@
     </head>
     <body>
 
-       <a href="../Home/index.php">Retour a la recherche</a>
+       <a href="../Home/index.php">Retoougutiououyoiuour a la recherche</a>
         
 <!--        Generation chaque personnages série + image de l'acteur-->
         <?php foreach($characters->cast as $_character): ?>

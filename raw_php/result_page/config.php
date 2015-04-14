@@ -88,11 +88,15 @@ $saison_data = array();
 
                 }
 
-    
+                $data = json_decode($saison_data);
 
-echo '<pre>';
-print_r($saison_data);
-echo '</pre>';
+var_dump($data);
+
+header('Content-Type:application/json');
+
+
+
+
              
             
            

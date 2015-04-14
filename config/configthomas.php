@@ -21,31 +21,21 @@
     </form>
     
 <!--    verification que la cherche n'est pas vide-->
-    <?php if(!empty($_POST['search'])){
-        //vérification qu'il y a au moins une sugéstion et...
-        if($search->total_results == 0){ ?>
-<!--           ... affichage message d'erreur ou ...-->
-            <div>
-                Désole, aucune série ne correspond à votre cherche...
-            </div>
-        <?php } else{?>
-<!--           ... suggéstions-->
-            <div>Tu cherche peut etre :</div>
-        <?php } ?>
-    
+    <?php if(!empty($_POST['search'])){ ?>
+    <div>Tu cherche peut etre :</div>
 <!--    affichege de toutes les produits pouvant correspondre a la recherche de l'utilisateur-->
-        <?php foreach($search->results as $_result):?>
-        <a href="../result_page/result.php?id=<?= $_result->id?>">
-        <span>
-            <img src="http://image.tmdb.org/t/p/w45<?= $_result->backdrop_path?>" alt="">
-        </span>
-        <span>
-            <?= $_result->original_name ?>
-        </span>
-        </a>
-        <br>
-    <?php endforeach; }?>
-    
+    <?php foreach($search->results as $_result):?>
+    <a href="../result_page/result.php?id=<?= $_result->id?>">
+    <span>
+        <img src="http://image.tmdb.org/t/p/w45<?= $_result->backdrop_path?>" alt="">
+    </span>
+    <span>
+        <?= $_result->original_name ?>
+    </span>
+    </a>
+    <br>
+    <?php endforeach; ?>
+    <?php } ?>
 <!--        affiche des séries les plus populaires en ce moment dans ordre de popularité-->
     <?php for($i = 0; $i < 19; $i++){?>
        <a href="../result_page/result.php?id=<?= $data->results[$i]->id ?>">

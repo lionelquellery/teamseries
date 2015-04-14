@@ -1,18 +1,21 @@
 <?php
-
 //  NOMBRE DE SAISON
 
 $ch = curl_init();
 
 $key = '?api_key=d0a923b609a899bbb5a493dc98fe31bd';
+<<<<<<< HEAD:Result page/result.php
 $key_series = '1399';
+=======
+$key_series = $_GET['id'];
+>>>>>>> origin/master:raw_php/result_page/config.php
 
 curl_setopt($ch, CURLOPT_URL, "http://api.themoviedb.org/3/tv/".$key_series."/changes".$key);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($ch, CURLOPT_HEADER, FALSE);
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-  "Accept: application/json"
+    "Accept: application/json"
 ));
 
 $response = curl_exec($ch);
@@ -30,18 +33,31 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($ch, CURLOPT_HEADER, FALSE);
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-  "Accept: application/json"
+    "Accept: application/json"
 ));
 
 $response = curl_exec($ch);
 curl_close($ch);
 
 $number_episodes = json_decode($response);
-
-$ct = 0;
-
 $counter = $number_episodes->seasons;
 
+// PERSONNAGES
+
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL, "http://api.themoviedb.org/3/tv/".$key_series."/credits".$key);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_HEADER, FALSE);
+
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+  "Accept: application/json"
+));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+<<<<<<< HEAD:Result page/result.php
 //    echo '<pre>';
 //    print_r($counter);
 //    echo '</pre>';
@@ -69,3 +85,6 @@ $counter = $number_episodes->seasons;
     </script>
 </body>
 </html>
+=======
+$characters = json_decode($response);
+>>>>>>> origin/master:raw_php/result_page/config.php

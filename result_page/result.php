@@ -70,17 +70,17 @@
         <fieldset name="benchmarks" class="benchmarks">
           <div class="checkbox-wrap">
             <label href="#" for="league-average" class="benchmarks-label">Benchmark One
-<!--               <input type="checkbox" name="benchmarks" id="league-average" class="benchmarks-checkbox"/><span></span><span></span>
- -->            </label>
+              <input type="checkbox" name="benchmarks" id="league-average" class="benchmarks-checkbox"/><span></span><span></span>
+            </label>
           </div>
           <div class="checkbox-wrap">
             <label href="#" for="top-10" class="benchmarks-label">Benchmark Two
-<!--               <input type="checkbox" name="benchmarks" id="top-10" class="benchmarks-checkbox"/><span></span><span></span>
- -->            </label>
+              <input type="checkbox" name="benchmarks" id="top-10" class="benchmarks-checkbox"/><span></span><span></span>
+            </label>
           </div>
         </fieldset>
-<!--         <button type="submit" value="random">Random</button>
- -->      </form>
+        <button type="submit" value="random">Random</button>
+      </form>
     </div>
   </div>
 </main>

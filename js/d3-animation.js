@@ -101,7 +101,7 @@ function draw(id) {
 		title: function() {
 		var d = this.__data__;
 		var pDate = d.date;
-		return 'Saison: ' + data.push(l); 
+		return 'Saison: ' + data.push(); 
 		}
 	});
 }

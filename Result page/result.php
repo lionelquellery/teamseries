@@ -5,7 +5,7 @@
 $ch = curl_init();
 
 $key = '?api_key=d0a923b609a899bbb5a493dc98fe31bd';
-$key_series = '61889';
+$key_series = '1399';
 
 curl_setopt($ch, CURLOPT_URL, "http://api.themoviedb.org/3/tv/".$key_series."/changes".$key);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -55,7 +55,7 @@ $counter = $number_episodes->seasons;
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
+<body onload="addElement()">
     <script>
         
         

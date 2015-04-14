@@ -8,6 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link rel="stylesheet" type="text/css" href="../css/css/chart.css">
     </head>
     <body>
 
@@ -61,6 +62,32 @@
                 <?= $_character->character?>
             </div>
         <?php endforeach; ?>
-        
+
+<main role="main">
+  <div id="entity-chart">
+    <div class="form-container">
+      <form id="benchmarks">
+        <fieldset name="benchmarks" class="benchmarks">
+          <div class="checkbox-wrap">
+            <label href="#" for="league-average" class="benchmarks-label">Benchmark One
+              <input type="checkbox" name="benchmarks" id="league-average" class="benchmarks-checkbox"/><span></span><span></span>
+            </label>
+          </div>
+          <div class="checkbox-wrap">
+            <label href="#" for="top-10" class="benchmarks-label">Benchmark Two
+              <input type="checkbox" name="benchmarks" id="top-10" class="benchmarks-checkbox"/><span></span><span></span>
+            </label>
+          </div>
+        </fieldset>
+        <button type="submit" value="random">Random</button>
+      </form>
+    </div>
+  </div>
+</main>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/tipsy/1.0/javascripts/jquery.tipsy.js"></script>
+            <script type="text/javascript" src="../js/d3-animation.js"></script>
+
     </body>
 </html>

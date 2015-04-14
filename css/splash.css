@@ -1,6 +1,15 @@
+body,html{
+	overflow-y: hidden;
+	overflow-x: hidden;
+	background-image: url(../image/footer_lodyas.png);
+}
+div{
+	padding-top: inherit;
+
+}
+
 .button {
-  background-image: -webkit-linear-gradient(106deg, #f7392b 50%, #ee3022 50%);
-  background-image: linear-gradient(-16deg, #f7392b 50%, #ee3022 50%);
+background-image: linear-gradient(-16deg, rgba(0, 0, 0, 1) 50%, #000000 50%);
   display: inline-block;
   color: #fff;
   text-transform: uppercase;

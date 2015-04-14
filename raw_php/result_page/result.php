@@ -61,6 +61,7 @@
                 <?= $_character->character?>
             </div>
         <?php endforeach; ?>
+
         
     </body>
 </html>

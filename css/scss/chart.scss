@@ -9,7 +9,7 @@ $color-4: #cb4460; // red circle
 $color-5: #efefef; // light white
 $color-6: #e7e9ec; // darker white
 $color-7: #cb4460; // red line
-$color-8: #92b6c7; // lighter blue
+$color-8: #cb4460; // lighter blue
 $color-9: #9ea0a6; // grey text
 $color-10: #699dc6; // button blue
 $color-11: #e0e1e3; // shade grey
@@ -22,7 +22,7 @@ $font-istok: 'Istok Web', sans-serif;
 // --- Mixins
 // ---------------------------------------------------
 
-// transitions
+// transition
 @mixin transition($property, $duration) {
   -webkit-transition: $property $duration ease-in-out;
   -moz-transition: $property $duration ease-in-out;
@@ -136,6 +136,10 @@ svg {
 
 #entity-chart line {
   stroke: $color-7;
+
+}
+#entity-chart{
+  
 }
 
 #entity-chart text {

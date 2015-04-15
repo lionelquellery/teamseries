@@ -4,18 +4,18 @@ var w = 780,
   g,
   current,
   duration = 700,
-  ease = "cubic-out",
+  ease = "elastic",
   obj,
   reset = [],
   id;
 
 function draw(id,data) {
-	var margin = 30,
+	var margin = 40,
 		y = d3.scale.linear().domain([0, d3.max(data)]).range([0 + margin, h - 60]),
 		x = d3.scale.linear().domain([0, data.length]).range([0 + margin, w + 50]),
 	    line = d3.svg.line()
 			  .x(function(d,i) { return x(i); })
-			  .y(function(d) { return -1 * y(d); });
+			  .y(function(d,i) { return -1 * y(d); });
 
 	var vis = d3.select(id).select("svg").select("g");
 	
@@ -34,7 +34,18 @@ function draw(id,data) {
 		  .attr("y1", -1 * y(0))
 		  .attr("x2", x(w))
 		  .attr("y2", -1 * y(0))
-	
+
+		g.append("svg:line")
+		  
+		  .attr("y1", -1 * y(0))
+		  .attr("y2", y(h))
+		  .attr("y2", -1 * y(0))
+
+
+		 // g.append("svg:line")
+		 //  .attr("x1",x(h))
+		 //  .attr("y1",-11000 *y(9))
+
 		g.selectAll(".xLabel")
 		  .data(x.ticks(12))
 		  .enter().append("svg:text")
@@ -48,7 +59,6 @@ function draw(id,data) {
 	g.append("svg:path")
 		.attr("class", id)
 		.attr("d", line(reset))
-        // .style("filter", "url(#drop-shadow)")
 		.transition().duration(duration).ease(ease)
 		.attr("d", line(data));
 						
@@ -66,7 +76,8 @@ function draw(id,data) {
 		current = id;
 		console.log("current = "+current, "data = "+data);
 	
-	$('svg circle').tipsy({ 
+	
+	$('svg circle').tipsy({
 		gravity: 's', 
 		html: true,
         fade: true,
@@ -74,7 +85,11 @@ function draw(id,data) {
 		title: function() {
 		var d = this.__data__;
 		var pDate = d.date;
-		return 'Saison: ' + data[0]; 
+		pDate = data.length;
+
+
+	
+		return 'Saison: ' + data; 
 		}
 	});
 }

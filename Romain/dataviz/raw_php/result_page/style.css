@@ -20,6 +20,11 @@
 
 }
 
+html, body{
+	height:100%;
+	width:100%;
+}
+
 body {
 	height: 100%;
 	min-height: 100%;
@@ -97,11 +102,11 @@ li:last-child {
 	padding-right: 0;
 }
 
-.seasons a {
+.seasons  {
 	text-decoration: none;
 	color: #666;
 	font-family: Gotham-Medium;
-	font-size: 0.7em;
+	font-size: 0.8em;
 	text-transform: uppercase;
 	padding: 1.2vw;
 }
@@ -159,7 +164,6 @@ button:focus{
 	cursor: pointer;
 }
 
-
 /********/
 
 
@@ -167,12 +171,28 @@ button:focus{
 
 .right {
 	width: 50%;
+	height:100%;
 	float: right;
-	left: 0
+	left: 0;
+	background-size:cover;
+	background-position:center;
 
 }
 
 .img-serie {
 	height: 100%;
+}
+
+.other-serie {
+	width: 20%;
+	height: 20%;
+	z-index: 10000;
+	background-color: #fff;
+}
+
+.other-serie i {
+	color: red;
+	width: 100px;
+	margin: 200px;
 }
 

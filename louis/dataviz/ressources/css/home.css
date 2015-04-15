@@ -4,24 +4,20 @@ section{
 }
 
 .logo{
-  margin: 7% auto 10% auto;
+  margin: 7% 0 10% 0;
   width: 25%;
 }
 
 .inputstyle{
 	width: 60%; 
-	//margin: auto;
+	margin: auto;
 	border-bottom: solid 1px !important;
 	margin-top: 20px;
 	font-size: 1.6em;
   border: none;
   font-family: 'Raleway';
   padding: 0 1% 0 1%;
-  height: 4%
-}
-
-input[type=image]{
-  width: 1.5%;
+  display: block;
 }
 
 input::-webkit-input-placeholder {
@@ -46,7 +42,7 @@ input:focus{
 
 }
 
-.line{
+.trait{
   position: relative;
   left:13%;
   width: 2%;
@@ -155,42 +151,4 @@ input:focus{
   opacity: 1;
 }
 
-.media__body h2 {
-  margin-top: 0; 
-}
-
-.media:nth-child(n+8){
-  visibility: hidden;
-}
-
-
-.opacity{
-  animation-name: opacity;
-  -webkit-animation-name: opacity;  
-
-  animation-duration: 1s; 
-  -webkit-animation-duration: 1s;
-
-  animation-timing-function: ease;  
-  -webkit-animation-timing-function: ease;
-
-  visibility: visible !important;     
-}
-
-@keyframes opacity {
-  0% {
-    opacity: 0
-  }    
-  100% {
-    opacity: 1
-  }
-}
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 0
-  }    
-  100% {
-    opacity: 1
-  }
-}
+.media__body h2 { margin-top: 0; }

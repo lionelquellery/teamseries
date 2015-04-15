@@ -1,6 +1,6 @@
 
 function getData(param) {
-$.getJSON( "http://127.0.0.1/dataviz/api_php/search/"+param, function( data ) {
+$.getJSON( "http://localhost/dataviz/api_php/search/"+param, function( data ) {
     init(data);
 });
 
@@ -8,6 +8,7 @@ $.getJSON( "http://127.0.0.1/dataviz/api_php/search/"+param, function( data ) {
 
 
 function init(data) {
+
     //génération tableau par rapport au series
     var canvas = document.getElementById("seriecanvas");
     var ctx = canvas.getContext("2d");

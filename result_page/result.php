@@ -8,11 +8,16 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link rel="stylesheet" type="text/css" href="../css/css/chart.css">
-    </head>
-    <body>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
 
-       <a href="../Home/index.php">Retour a la recherche</a>
+       
+
+  </head>
+    <body>
+        <div class="se-pre-con">
+            <div class="loader"></div>
+        </div>
+        <a href="../Home/index.php">Retour a la recherche</a>
         <script>
             // Génaration tableau nombre de saison = nombre de valeur / nombre d'épisode dans la saison la valeur.
             var saison_episode = [
@@ -62,17 +67,7 @@
                 <?= $_character->character?>
             </div>
         <?php endforeach; ?>
-<!-- graph -->
-<!-- <main role="main">
-  <div id="entity-chart">
-    <div class="form-container">
-    </div>
-  </div>
-</main>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
-<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-<script type="text/javascript" src="http://cdn.jsdelivr.net/tipsy/1.0/javascripts/jquery.tipsy.js"></script>
-            <script type="text/javascript" src="../js/d3-animation.js"></script> -->
+
 
     </body>
 </html>

@@ -17,7 +17,7 @@ section{
   border: none;
   font-family: 'Raleway';
   padding: 0 1% 0 1%;
-  clear: both;
+  height: 4%
 }
 
 input[type=image]{

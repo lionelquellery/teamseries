@@ -1,0 +1,178 @@
+@font-face {
+    font-family: Gotham-ultra;
+    src: url(font/Gotham-Ultra.otf);
+    src: url(font/Gotham-Ultra.woff);
+
+
+ 	font-family: Gotham-book;
+    src: url(font/Gotham-book.otf);
+    src: url(font/Gotham-book.woff);
+
+
+    font-family: Gotham-Thin;
+    src: url(font/Gotham-Thin.otf);
+    src: url(font/Gotham-Thin.woff);
+
+
+    font-family: Gotham-Medium;
+    src: url(font/Gotham-Medium.otf);
+    src: url(font/Gotham-Medium.woff);
+
+}
+
+body {
+	height: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	font-family: Gotham-book;
+  	font-weight: 400;
+  	font-size: 1em;
+}
+
+.main {
+	width: 50%;
+	float: left;
+}
+
+.left {
+	padding: 50px 100px;
+}
+
+.logo {
+	max-width: 300px;
+	float: left;
+	font-family: Gotham-Thin;
+  	letter-spacing: 0.08em;
+  	text-transform: uppercase;
+  	border-top: solid 2px black;
+  	padding-top: 4px;
+
+
+}
+
+.logo-bold {
+	width: 150px;
+	font-family: Gotham-ultra;
+}
+
+h1 {
+	font-family: Gotham-ultra;
+  	font-weight: 900;
+  	font-size: 2.5vw;
+  	letter-spacing: 0.08em;
+  	text-transform: uppercase;
+  	margin-top: 50px;
+  	max-width: 60%;
+  	line-height: 1.3em; 
+}
+
+.synopsis {
+	font-family: Gotham-book;
+  	margin-top: 20px;
+  	color: #666;
+  	line-height: 1.5em;
+}
+
+h2 {
+	font-family: Gotham-ultra;
+  	font-size: 1.2em;
+  	letter-spacing: 0.08em;
+  	text-transform: uppercase;
+  	margin-top: 30px;
+  	max-width: 100%;
+}
+
+li {
+	display: inline-block;
+	padding: 0.5em;
+	margin-top: 0.8em;
+}
+
+li:first-child {
+	margin-left: 0;
+}
+
+li:last-child {
+	margin-right: 0;
+	padding-right: 0;
+}
+
+.seasons a {
+	text-decoration: none;
+	color: #666;
+	font-family: Gotham-Medium;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	padding: 1.2vw;
+}
+
+.active {
+	border-bottom: solid 3px #cb4460;
+	color: #222 !important;
+}
+
+/******** SEARCH BAR *********/
+
+.inputstyle{
+	float: right;
+	width: 40%; 
+	border: none;
+	border-bottom: solid 2px #cb4460 !important;
+	font-size: 0.8em;
+	font-family: Gotham-book;
+	font-weight: 300;
+  	padding-left: 1%;
+}
+
+*::-webkit-input-placeholder {
+    color: #c5687c;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: #c5687c;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: #c5687c;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #c5687c;
+}
+
+input:focus{
+  outline:none;
+}
+
+button:focus{
+  outline:none;
+}
+
+.search {
+	float: right;
+	position: absolute;
+	left: 42%;
+	margin-top: -2px;
+	background: none;
+	border: none;
+	color: #cb4460;
+	cursor: pointer;
+}
+
+
+/********/
+
+
+/******* RIGHT ***/
+
+.right {
+	width: 50%;
+	float: right;
+	left: 0
+
+}
+
+.img-serie {
+	height: 100%;
+}
+

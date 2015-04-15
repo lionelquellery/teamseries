@@ -105,7 +105,6 @@ function removeData(id) {
 
 function generateData(id) {
 
-	var data; 
 	var data = [];
 
 	d3.json("../js/data.json", function(error, json,data) {

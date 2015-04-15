@@ -60,7 +60,7 @@ function init(data) {
                     repartchange = repartchange + reparte;
                     var val = data[s_id][i];
                     ctx.beginPath();
-                    ctx.arc(repartchange,((-1)*((val*100)/2.2))+490,10/2,0,2*Math.PI);
+                    ctx.arc(repartchange,((-1)*((val*100)/2.2))+490,10,0,2*Math.PI);
                     ctx.stroke();
                 }                
             }

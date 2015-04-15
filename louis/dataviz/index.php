@@ -29,11 +29,13 @@
                 Désole, aucune série ne correspond à votre cherche...
             </div>
         <?php } else{?>
+          <!--           ci dessous la div des suggéstion     -->
            <div>
             <div>Tu cherche peut etre :</div>
         <?php } ?>
     
         <?php foreach($search->results as $_result):?>
+<!--        et ici les différents info affiché par les suggéstions     -->
         <a href="raw_php/result_page/result.php?id=<?= $_result->id?>">
         <span>
             <img src="http://image.tmdb.org/t/p/w45<?= $_result->backdrop_path?>" alt="">

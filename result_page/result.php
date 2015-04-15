@@ -63,7 +63,7 @@
             </div>
         <?php endforeach; ?>
 <!-- graph -->
-<main role="main">
+<!-- <main role="main">
   <div id="entity-chart">
     <div class="form-container">
     </div>
@@ -72,7 +72,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
 <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/tipsy/1.0/javascripts/jquery.tipsy.js"></script>
-            <script type="text/javascript" src="../js/d3-animation.js"></script>
+            <script type="text/javascript" src="../js/d3-animation.js"></script> -->
 
     </body>
 </html>

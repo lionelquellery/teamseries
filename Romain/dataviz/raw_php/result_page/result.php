@@ -13,6 +13,8 @@ require('config.php');
 	<link rel="stylesheet" href="reset.css">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="font/font-awesome/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 </head>
 <body>
 	<div class="main">
@@ -28,7 +30,7 @@ require('config.php');
 			<p class="synopsis"><?= $serie->overview ?></h2>
 			<nav>
 				<ul class="seasons">
-				<input type="button" name="0" value="Serie" class="seasons">
+				<input type="button" name="0" value="Serie" class="seasons active first">
        			 <?php foreach($saison_data as $_data): 
            			 $compteur_input = $compteur_input + 1;?>
           			  <li>
@@ -37,20 +39,18 @@ require('config.php');
        			<?php endforeach; ?>
 				</ul>
 			</nav>
-			<canvas id="seriecanvas" width="620" height="400" style="border:1px solid #000000;"></canvas>
-     
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-                      <script type="text/javascript" src="serie.js"></script>
-
-        <script>
-            getData(<?=$_GET['id']?>)
-        </script>
-
+			<canvas id="seriecanvas" width="640" height="380" style="border:1px solid #000000;"></canvas>
+ 
+	<script type="text/javascript" src="serie.js"></script>
+    <script>
+    	getData(<?=$_GET['id']?>)
+    </script>
 		</section>
 	</div>
 		<div class="right" style="background-image:url(http://image.tmdb.org/t/p/w1280<?php echo $serie->backdrop_path ?>)">
+			<div class="white-block">
+				<i class="fa fa-angle-right"></i>
+			</div>
 		</div>
 </body>
 </html>

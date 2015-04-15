@@ -3,16 +3,13 @@
     src: url(font/Gotham-Ultra.otf);
     src: url(font/Gotham-Ultra.woff);
 
-
  	font-family: Gotham-book;
     src: url(font/Gotham-book.otf);
     src: url(font/Gotham-book.woff);
 
-
     font-family: Gotham-Thin;
     src: url(font/Gotham-Thin.otf);
     src: url(font/Gotham-Thin.woff);
-
 
     font-family: Gotham-Medium;
     src: url(font/Gotham-Medium.otf);
@@ -20,7 +17,7 @@
 
 }
 
-html, body{
+html, body {
 	height:100%;
 	width:100%;
 }
@@ -51,8 +48,6 @@ body {
   	text-transform: uppercase;
   	border-top: solid 2px black;
   	padding-top: 4px;
-
-
 }
 
 .logo-bold {
@@ -89,26 +84,24 @@ h2 {
 
 li {
 	display: inline-block;
-	padding: 0.5em;
-	margin-top: 0.8em;
-}
-
-li:first-child {
-	margin-left: 0;
-}
-
-li:last-child {
-	margin-right: 0;
-	padding-right: 0;
+	margin: 0.5em
 }
 
 .seasons  {
 	text-decoration: none;
 	color: #666;
 	font-family: Gotham-Medium;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	text-transform: uppercase;
-	padding: 1.2vw;
+	padding: 0.7vw 0.8vw;
+	border: none;
+	background-color: #fff;
+	white-space: nowrap;
+	overflow: scroll;
+}
+
+.seasons input {
+	cursor: pointer;
 }
 
 .active {
@@ -195,4 +188,34 @@ button:focus{
 	width: 100px;
 	margin: 200px;
 }
+
+.white-block {
+	right: 0;
+	bottom: 70px;
+	width: 120px;
+	height: 120px;
+	z-index: 1000;
+	position: absolute;
+	background-color: #fff;
+}
+
+.white-block>i {
+	top: 35px;
+	left: 55px;
+	position: absolute;
+}
+
+.white-block>i:before {
+	font-size: 50px;
+	text-align: center;
+	color: #ccc;
+	top: 50px;
+	left: 50px;
+}
+
+.white-block:hover {
+	width: 300px;
+}
+
+
 

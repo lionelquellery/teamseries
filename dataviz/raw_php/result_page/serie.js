@@ -1,6 +1,6 @@
 
 function getData(param) {
-$.getJSON( "http://127.0.0.1/Semaine%20Intensive/Test_api/api_php/search/"+param, function( data ) {
+$.getJSON( "http://127.0.0.1/dataviz/api_php/search/"+param, function( data ) {
     init(data);
 });
 

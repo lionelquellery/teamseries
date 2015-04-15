@@ -17,9 +17,7 @@
     <body>
         <section>
             <img class="logo" src="logo.svg" alt="">
-            <form action="#" method="post">
-                <input type="text" class="inputstyle" placeholder="Recherche ta série préférée...">
-            </form>
+                <input type="search" class="inputstyle" placeholder="Recherche ta série préférée...">
         </section>
 
         <div class="container">

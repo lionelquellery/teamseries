@@ -16,11 +16,8 @@ section{
 	font-size: 1.6em;
   border: none;
   font-family: 'Raleway';
-  padding-left: 1%;
-}
-
-input[type=image]{
-  width: 3em;
+  padding: 0 1% 0 1%;
+  display: block;
 }
 
 input::-webkit-input-placeholder {
@@ -83,6 +80,7 @@ input:focus{
   float:left;
   position: relative;
   width: 20%;
+  margin-bottom: -8px;
 }
 
 .media .media__body{

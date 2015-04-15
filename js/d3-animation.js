@@ -5,53 +5,26 @@ var w = 780,
   current,
   duration = 700,
   ease = "cubic-out",
-  reset = [0,0,0,0,0,0,0,0,0,0,0,0,0];
+  obj,
+  reset = [],
+  id;
 
-function draw(id) {
-	var data = generateData(),
-	margin = 30,
-	y = d3.scale.linear().domain([0, d3.max(data)]).range([0 + margin, h - 60]),
-	x = d3.scale.linear().domain([0, data.length]).range([0 + margin, w + 50]),
-	line = d3.svg.line()
-	  .x(function(d,i) { return x(i); })
-	  .y(function(d) { return -1 * y(d); });
-		
-	console.log(data);
+function draw(id,data) {
+	var margin = 30,
+		y = d3.scale.linear().domain([0, d3.max(data)]).range([0 + margin, h - 60]),
+		x = d3.scale.linear().domain([0, data.length]).range([0 + margin, w + 50]),
+	    line = d3.svg.line()
+			  .x(function(d,i) { return x(i); })
+			  .y(function(d) { return -1 * y(d); });
 
-	var vis = d3.select("#entity-chart").select("svg").select("g");
+	var vis = d3.select(id).select("svg").select("g");
 	
 	if (vis.empty()) {
-		vis = d3.select("#entity-chart")
+		vis = d3.select(id)
 		  .append("svg:svg")
 		  .attr("width", w)
 		  .attr("height", h);
-          
-        // -- had to remove drop shadows ---
-        // -- made transitions all funky :( ---
-        // filters go in defs element
-        // var defs = vis.append("defs");
-        // 
-        // var filter = defs.append("filter")
-        //     .attr("id", "drop-shadow")
-        //     .attr("height", "135%");
-        // 
-        // filter.append("feGaussianBlur")
-        //     .attr("in", "SourceAlpha")
-        //     .attr("stdDeviation", 10)
-        //     .attr("result", "blur");
-        // 
-        // filter.append("feOffset")
-        //     .attr("in", "blur")
-        //     .attr("dx", 0)
-        //     .attr("dy", 10)
-        //     .attr("result", "offsetBlur");
-        // 
-        // var feMerge = filter.append("feMerge");
-        // 
-        // feMerge.append("feMergeNode")
-        //     .attr("in", "offsetBlur");     
-        // feMerge.append("feMergeNode")
-        //     .attr("in", "SourceGraphic");
+        
 			
 		g = vis.append("svg:g")
 		  .attr("transform", "translate(0, 350)");
@@ -101,7 +74,7 @@ function draw(id) {
 		title: function() {
 		var d = this.__data__;
 		var pDate = d.date;
-		return 'Saison: ' + data.push(); 
+		return 'Saison: ' + data[0]; 
 		}
 	});
 }
@@ -115,50 +88,36 @@ function removeData(id) {
 	d3.selectAll("path."+id).remove();
 }
 
-function generateData() {
+function generateData(id) {
+
+	var data; 
 	var data = [];
-	for (var i = 0, l = 10; i < l; i++) {
-	    data.push(Math.round(Math.random() * l))
-	}
-	return data;
+
+	d3.json("../js/data.json", function(error, json,data) {
+ 		if (error)
+ 			return console.warn(error);
+
+	 	data = json;
+	 	data = data[0];
+	 	obj = data;
+ 	
+	 	console.log(data);
+	  	console.log(data);
+
+	  	draw(id,data);
+
+	});
+
+	
 }
 
-function subMetricChange() {
-	$('.benchmarks-checkbox').on('change', function(e) {
-		id = $(this).attr("id");
-		if ($(this).is(":checked")) {
-			$(this).parent().addClass("active");
-			draw(id);
-		} else {
-			removeData(id);
-			$(this).parent().removeClass("active");
-		}
-		e.preventDefault();
-	});
-	$('button[type="submit"]').on('click', function(e) {
-		$('.benchmarks-checkbox').prop('checked', false);
-		$('.benchmarks-label').removeClass("active");
-		id = $(this).attr("id");
-		$(".sub-metric-checkbox").parent().removeClass("active");
-		d3.selectAll("circle")
-			.transition().duration(duration).ease(ease)
-			.attr("cy", 0)
-			.attr("r", 0)
-			.remove();
-		d3.selectAll("path").remove();
-		
-		$(this).parent().addClass("active");
-		draw(id);
-		e.preventDefault();
-	});
-}
+
+
+
 function pageInit() {
-	$('#Scoring-Metric-1').addClass("first").attr("checked", "checked").parent().addClass("active");
-	id = $('.sub-metric-checkbox.first').attr("id");
-	draw(id);
+	generateData('#entity-chart');
 }
 
 $(document).ready( function() {
-	subMetricChange();
 	pageInit();
 });

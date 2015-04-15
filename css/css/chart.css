@@ -69,14 +69,14 @@ body {
     margin: 30px;
     height: 1px;
     width: 750px;
-    background: #d0d1d1; }
+    background: #cb4460; }
 
 svg {
   position: relative;
   z-index: 2; }
 
 #entity-chart line {
-  stroke: #d0d1d1; }
+  stroke: #cb4460; }
 
 #entity-chart text {
   fill: #92b6c7; }
@@ -87,7 +87,7 @@ svg {
   fill: none; }
 
 #entity-chart circle {
-  stroke: #5f96bb;
+  stroke: #cb4460;
   fill: #fff;
   stroke-width: 3px; }
 
@@ -99,17 +99,17 @@ svg {
 #entity-chart path[class*="average"],
 #entity-chart path[class*="top"],
 #entity-chart path[class*="bottom"] {
-  stroke: #d0d1d1; }
+  stroke: #cb4460; }
 
 #entity-chart circle[class*="average"],
 #entity-chart circle[class*="top"],
 #entity-chart circle[class*="bottom"] {
   fill: white;
-  stroke: #d0d1d1; }
+  stroke: #cb4460; }
 
 #entity-chart circle:hover {
   cursor: pointer;
-  stroke: #5f96bb; }
+  stroke: #cb4460; }
 
 .tipsy {
   font-size: 14px;
@@ -121,11 +121,11 @@ svg {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
 
 .tipsy-inner {
-  background-color: #5f96bb;
-  background-image: -moz-linear-gradient(#7aaec5, #5f96bb);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7aaec5), to(#5f96bb));
-  background-image: -webkit-linear-gradient(#7aaec5, #5f96bb);
-  background-image: -o-linear-gradient(#7aaec5, #5f96bb);
+  background-color: #cb4460;
+  background-image: -moz-linear-gradient(#7aaec5, #cb4460);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7aaec5), to(#cb4460));
+  background-image: -webkit-linear-gradient(#7aaec5, #cb4460);
+  background-image: -o-linear-gradient(#7aaec5, #cb4460);
   color: #fff;
   max-width: 200px;
   padding: 5px 8px 4px 8px;
@@ -138,10 +138,10 @@ svg {
   width: 0;
   height: 0;
   line-height: 0;
-  border: 5px dashed #5f96bb; }
+  border: 5px dashed #cb4460; }
 
 .tipsy-arrow-s {
-  border-top-color: #5f96bb; }
+  border-top-color: #cb4460; }
 
 .tipsy-s .tipsy-arrow {
   bottom: 0;
@@ -205,7 +205,7 @@ svg {
         left: 2px;
         top: 5px; }
     .form-container label.active span:first-of-type {
-      background: #5f96bb; }
+      background: #cb4460; }
     .form-container label.active span:last-of-type {
       left: 22px; }
     .form-container label:hover {

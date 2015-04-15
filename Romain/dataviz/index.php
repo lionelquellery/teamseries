@@ -1,5 +1,3 @@
-
-
 <?php
 
     require ('raw_php/home/home.php');

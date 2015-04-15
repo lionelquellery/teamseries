@@ -216,6 +216,44 @@ button:focus{
 .white-block:hover {
 	width: 300px;
 }
+nav {
+    position:relative;
+     border-top:1px solid #ddd;
+    margin:30px;
+}
+ul {
+    padding-top:8px;
+}
+li {
+    display:inline-block;
+    padding:0 18px;
+    }
+li a {
+    color:#333;
+    text-decoration:none;
+    font-family:serif;
+}
+.line {
+    position:absolute;
+    height:3px;
+    width:18px;
+    background-color:teal;
+    top:0;
+    left:0;
+    -webkit-transition:margin .3s linear;
+    -moz-transition:margin .3s linear;
+    -o-transition:margin .3s linear;
+    transition:margin .3s linear;
+    display:none;
+}
 
+.line a:visited{
+	color:red;
+}
+
+input.seasons.current-menu-item.first a:active{
+	color:red;
+
+}
 
 

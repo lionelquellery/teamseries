@@ -33,6 +33,18 @@ require('config.php');
 			<p class="synopsis"><?= $serie_overview ?></h2>
 			<nav>
 			
+			<div>
+			    Premiere date de diffusion : <?= $serie->first_air_date ?>
+			</div>
+			
+			<div>
+			    Date de diffusion du dernière apisode : <?= $serie->last_air_date ?>
+			</div>
+			
+			<div>
+			    Nombre d'episodes : <?= $serie->number_of_episodes ?>
+			</div>
+			
 <!--        Generation chaque personnages série + image de l'acteur-->
         <?php foreach($characters->cast as $_character): ?>
         <!--           image      -->

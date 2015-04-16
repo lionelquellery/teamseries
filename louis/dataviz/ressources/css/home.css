@@ -4,20 +4,24 @@ section{
 }
 
 .logo{
-  margin: 7% 0 10% 0;
+  margin: 7% auto 10% auto;
   width: 25%;
 }
 
 .inputstyle{
-	width: 60%; 
-	margin: auto;
-	border-bottom: solid 1px !important;
-	margin-top: 20px;
-	font-size: 1.6em;
+  width: 60%; 
+  //margin: auto;
+  border-bottom: solid 1px !important;
+  margin-top: 20px;
+  font-size: 1.6em;
   border: none;
   font-family: 'Raleway';
   padding: 0 1% 0 1%;
-  display: block;
+  height: 4%
+}
+
+input[type=image]{
+  width: 1.5%;
 }
 
 input::-webkit-input-placeholder {
@@ -38,11 +42,11 @@ input:-ms-input-placeholder {
 }
 
 input:focus{
-	outline:none;
+  outline:none;
 
 }
 
-.trait{
+.line{
   position: relative;
   left:13%;
   width: 2%;
@@ -109,7 +113,7 @@ input:focus{
 }
 
 .media__body:hover { 
-	opacity: 1; 
+  opacity: 1; 
 }
 
 .media__body:after,
@@ -151,4 +155,105 @@ input:focus{
   opacity: 1;
 }
 
-.media__body h2 { margin-top: 0; }
+.media__body h2 {
+  margin-top: 0; 
+}
+
+.media:nth-child(n+8){
+  visibility: hidden;
+}
+
+
+.opacity{
+  animation-name: opacity;
+  -webkit-animation-name: opacity;  
+
+  animation-duration: 1s; 
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;  
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;     
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0
+  }    
+  100% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0
+  }    
+  100% {
+    opacity: 1
+  }
+}
+
+.suggest{
+  z-index: 100;
+  position: absolute;
+  background-color: rgba(0,0,0,0.9);
+  width: 100%;
+  min-height: 100%;
+}
+
+.suggest .close{
+  text-decoration: none;
+  color: white;
+  margin: 3% 0 5% 0;
+  display: block;
+  border:solid 1px white;
+  width: 5%;
+  margin-left: 70%
+}
+
+.sorry{
+  width: 40%;
+  margin: 20% auto;
+  text-align: center;
+  font-weight: 700;
+  font-size: 170%;
+  color: white;
+}
+
+.success{
+  text-align: left;
+  color: white;
+  text-transform: uppercase;
+  width: 40%;
+  margin: 0 auto 10%;
+}
+
+.success h2{
+  font-size: 160%;
+  font-weight: 700;
+  margin-bottom:5% 
+}
+
+.success .upperline{
+  width: 5%;
+  border-top: solid 5px white;
+  margin-bottom: 7px;
+}
+
+.success .img{
+  width: 15%;
+  display: inline-block;
+}
+
+.success a{
+  text-decoration: none;
+  color: white;
+  line-height: 150%
+}
+
+.suggest:focus{
+  display: none;
+}
+

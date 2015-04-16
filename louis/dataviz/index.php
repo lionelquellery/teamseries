@@ -11,15 +11,50 @@
         <link rel="stylesheet" type="text/css" href="ressources/css/reset.css">
         <link rel="stylesheet" type="text/css" href="ressources/css/home.css">
         <link href='http://fonts.googleapis.com/css?family=Raleway:700,900,400,200' rel='stylesheet' type='text/css'>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     </head>
     <body>
         <section>
+                <?php if(!empty($_POST['search'])){?>
+                <div class="suggest"  id="hideme">
+                <a href="#" onClick="hide('hideme')" class="close">CLOSE ×</a>
+
+                <?php if($search->total_results == 0){ ?>
+                    <div class='sorry'>
+                        Désolé, aucune série ne correspond à votre recherche...
+                    </div>
+                <?php } else{?>
+
+                   <div class='success'>
+                   <div class='upperline'></div>
+                    <h2>Tu cherche peut etre :</h2>
+                <?php } ?>
+            
+                <?php foreach($search->results as $_result):?>
+                <a href="raw_php/result_page/result.php?id=<?= $_result->id?>">
+                <span class='img'>
+                    <img src="http://image.tmdb.org/t/p/w75<?= $_result->backdrop_path?>" alt="">
+                </span>
+                <span>
+                    <?= $_result->original_name ?>
+                </span>
+                </a>
+                <br>
+            <?php endforeach; }?>
+                </div>
+            </div>
+
+
+
+
             <img class="logo" src="ressources/img/logo.svg" alt="">    
             <form action="#" method="post">
                 <input type="search" class="inputstyle" placeholder="Recherche ta série préférée..." name="search">    
-            </form>   
-        </section>
+            </form> 
         
+<<<<<<< HEAD
+        </section>
+=======
 
     <?php if(!empty($_POST['search'])){
 
@@ -47,9 +82,10 @@
         <br>
     <?php endforeach; }?>
         </div>
+>>>>>>> origin/master
 
         <div class="container">
-            <div class="trait"></div>
+            <div class="line"></div>
             <p class="popular">Les plus consultés :</p>
             <?php for($i = 0; $i < 19; $i++){?>    
             <div class="media"> 
@@ -61,5 +97,23 @@
                 
             <?php } ?>
         </div>
+        <script>
+            $(window).scroll(function() {
+                $('.media').each(function(){
+                    var imagePos = $(this).offset().top;
+
+                    var bottomOfWindow = $(window).scrollTop()+ $(window).height();
+                        if (imagePos < bottomOfWindow-60) {
+                            $(this).addClass("opacity");
+                    }
+                });
+            });
+
+            function hide(obj) {
+                var el = document.getElementById(obj);
+                el.style.display = 'none';
+            }
+
+        </script>
     </body>
 </html>

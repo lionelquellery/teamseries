@@ -13,7 +13,7 @@ require('config.php');
     <link rel="stylesheet" href="../../ressources/css/reset.css">
 	<link rel="stylesheet" href="../../ressources/css/result/style.css">
 	<link rel="stylesheet" href="../../ressources/font/font-awesome/css/font-awesome.min.css">
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    
 
 </head>
 <body>
@@ -22,10 +22,6 @@ require('config.php');
 		<section class="left">
 			<header>
                 <a href="../../index.php"><div class="logo">Data<span class="logo-bold">Series</span></div></a>
-                <form action="#" method="post">
-                	<input type="search" class="inputstyle" placeholder="Search a serie" name="search">
-					<button class="search"><i class="fa fa-search"></i></button>
-				</form>
 			</header>
 			
 <!--			info de la serie    -->
@@ -51,7 +47,6 @@ require('config.php');
 				</ul>
 			</nav>
 			<div class="seriecanvas_wrp">
-                
 			    <canvas id="seriecanvas" width="620" height="380"></canvas>
             </div>
             <?php } ?>
@@ -91,7 +86,8 @@ require('config.php');
             </div>
         <?php }?>
 		</div>
-		
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="../../ressources/js/app.js"></script>
     <script type="text/javascript" src="../../ressources/js/serie.js"></script>
     <script>
     	getData(<?=$_GET['id']?>)

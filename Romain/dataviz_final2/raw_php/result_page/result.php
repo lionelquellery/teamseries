@@ -28,6 +28,7 @@ require('config.php');
 					<button class="search"><i class="fa fa-search"></i></button>
 				</form>
 			</header>
+            <div class="clear"></div>
 		        <div class="popularity open">
                 	<h1><?= $serie->name ?></h1> 
         			<p class="synopsis"><?= $serie_overview ?></h2>
@@ -58,28 +59,42 @@ require('config.php');
                             <i class="fa fa-angle-down"></i>
                         </div>
                 </div>
-                <div class="characters">
+                <div class="characters hidden">
+                    <div class="prec">
+                        <i class="fa fa-angle-up"></i>
+                    </div>
                     <!--Generation chaque personnages série + image de l'acteur-->
                     <?php foreach($characters->cast as $_character): ?>
                     <!--image-->
-                    <div>
-                        <img src="http://image.tmdb.org/t/p/w300<?= $_character->profile_path ?>" alt="">
+                    <div class="col-half">
+                        <div style="background-image:url(http://image.tmdb.org/t/p/w154<?= $_character->profile_path ?>)" class="radius-img">
                         </div>
-                    <!--nom du personnage joué-->
-                        <span>
-                            Personnage :<?= $_character->character?>
-                        </span>
-                    <!--nom de l'acteur-->
-                        <span>
-                            Acteur : <?= $_character->name?>
-                        </span>
+                        <!--nom du personnage joué-->
+       
+                                <p class="charactername">
+                                    <?= $_character->name?>
+                                </p>
+                         
+                        <!--nom de l'acteur-->
+                                <p class="actorname">
+                                    <span class="as">As </span><?= $_character->character?>
+                                </p>
+                        </div>
                     <?php endforeach; ?>
+         
             <script>
             $('.next').click(function (e)
             {
                 e.preventDefault();
                 $('.open').removeClass('open').addClass('hidden');
                 $('.characters').removeClass('hidden').addClass('open');
+            });
+
+            $('.prec').click(function (e)
+            {
+                e.preventDefault();
+                $('.open').removeClass('open').addClass('hidden');
+                $('.popularity').removeClass('hidden').addClass('open');
             });
             </script>
                 </div>

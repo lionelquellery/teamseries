@@ -11,7 +11,6 @@
         <link rel="stylesheet" type="text/css" href="ressources/css/reset.css">
         <link rel="stylesheet" type="text/css" href="ressources/css/home.css">
         <link href='http://fonts.googleapis.com/css?family=Raleway:700,900,400,200' rel='stylesheet' type='text/css'>
-        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     </head>
     <body>
         <section>
@@ -21,13 +20,13 @@
 
                 <?php if($search->total_results == 0){ ?>
                     <div class='sorry'>
-                        Désolé, aucune série ne correspond à votre recherche...
+                        Oops, no TV show matches your search...
                     </div>
                 <?php } else{?>
 
                    <div class='success'>
                    <div class='upperline'></div>
-                    <h2>Tu cherche peut etre :</h2>
+                    <h2>You're maybe looking for :</h2>
                 <?php } ?>
             
                 <?php foreach($search->results as $_result):?>
@@ -49,46 +48,16 @@
 
             <img class="logo" src="ressources/img/logo.svg" alt="">    
             <form action="#" method="post">
-                <input type="search" class="inputstyle" placeholder="Recherche ta série préférée..." name="search">    
+                <input type="search" class="inputstyle" placeholder="Search your favourite series..." name="search">    
             </form> 
-        
-<<<<<<< HEAD
+
         </section>
-=======
-
-    <?php if(!empty($_POST['search'])){
-
-        if($search->total_results == 0){ ?>
-
-            <div class='suggest'>
-                Désole, aucune série ne correspond à votre cherche...
-            </div>
-        <?php } else{?>
-          <!--           ci dessous la div des suggéstion     -->
-           <div>
-            <div>Tu cherche peut etre :</div>
-        <?php } ?>
-    
-        <?php foreach($search->results as $_result):?>
-<!--        et ici les différents info affiché par les suggéstions     -->
-        <a href="raw_php/result_page/result.php?id=<?= $_result->id?>">
-        <span>
-            <img src="http://image.tmdb.org/t/p/w45<?= $_result->backdrop_path?>" alt="">
-        </span>
-        <span>
-            <?= $_result->original_name ?>
-        </span>
-        </a>
-        <br>
-    <?php endforeach; }?>
-        </div>
->>>>>>> origin/master
 
         <div class="container">
             <div class="line"></div>
-            <p class="popular">Les plus consultés :</p>
+            <p class="popular">Most popular TV shows :</p>
             <?php for($i = 0; $i < 19; $i++){?>    
-            <div class="media"> 
+            <div class="media" data-sr="enter top, ease down 20%"> 
                 <img class="media__image" src="http://image.tmdb.org/t/p/w600<?= $data->results[$i]->backdrop_path?>" alt="" />
                 <a href="raw_php/result_page/result.php?id=<?= $data->results[$i]->id ?>"><div class="media__body">
                     <h2><?= $data->results[$i]->original_name?></h2>
@@ -97,18 +66,12 @@
                 
             <?php } ?>
         </div>
+
+        <script src='ressources/js/scrollReveal.min.js'></script>
         <script>
-            $(window).scroll(function() {
-                $('.media').each(function(){
-                    var imagePos = $(this).offset().top;
-
-                    var bottomOfWindow = $(window).scrollTop()+ $(window).height();
-                        if (imagePos < bottomOfWindow-60) {
-                            $(this).addClass("opacity");
-                    }
-                });
-            });
-
+            window.sr = new scrollReveal();
+        </script>
+        <script>
             function hide(obj) {
                 var el = document.getElementById(obj);
                 el.style.display = 'none';

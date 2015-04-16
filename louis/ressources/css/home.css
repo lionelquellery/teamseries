@@ -159,7 +159,7 @@ input:focus{
   margin-top: 0; 
 }
 
-.media:nth-child(n+8){
+/*.media:nth-child(n+8){
   visibility: hidden;
 }
 
@@ -193,7 +193,7 @@ input:focus{
   100% {
     opacity: 1
   }
-}
+}*/
 
 .suggest{
   z-index: 100;

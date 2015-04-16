@@ -10,13 +10,15 @@
         <title></title>
         <link rel="stylesheet" type="text/css" href="css/main.css">
 
-       
-
   </head>
     <body>
-        <div class="se-pre-con">
-            <div class="loader"></div>
-        </div>
+
+        <div id="overlay">
+        <div class="overlay-inner coffee">
+   
+
+  </div>
+</div>
         <a href="../Home/index.php">Retour a la recherche</a>
         <script>
             // Génaration tableau nombre de saison = nombre de valeur / nombre d'épisode dans la saison la valeur.
@@ -67,6 +69,8 @@
                 <?= $_character->character?>
             </div>
         <?php endforeach; ?>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+      <script type="text/javascript" src="lionel.loader.js"></script>
 
 
     </body>

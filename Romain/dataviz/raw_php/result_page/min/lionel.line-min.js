@@ -1,0 +1,1 @@
+var cmi=$(".current-menu-item"),line=$(".line"),width=cmi.width()/2,defaultPosX=cmi.position().left+9+width;line.css("margin-left",defaultPosX+"px").show(),$("nav a").hover(function(){var i=$(this).parent("li").width()/2,t=$(this).parent("li").position().left+(i+9);line.css("margin-left",t+"px")},function(){line.css("margin-left",defaultPosX+"px"),console.log(defaultPosX)});

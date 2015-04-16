@@ -41,6 +41,7 @@ require('config.php');
 				</ul>
 				<span class="line"></span>
 			</nav>
+
 			<!-- menu end-->
 			<canvas id="seriecanvas" width="640" height="380" style="border:1px solid #000000;"></canvas>
  

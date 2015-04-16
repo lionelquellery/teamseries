@@ -5,14 +5,13 @@ var cmi = $('.current-menu-item');
 //on selectione la ligne en cours execution 
 var line = $('.line'); 
  //on divise le la taille de l'item en cours par 2
-var width = cmi.width() / 1;
+var width = cmi.width() / 2;
 //par defaut on centre l'objet relativement a l'item
 var defaultPosX = cmi.position().left + 9 + width; 
- //Set the default position and display
 line.css('margin-left',defaultPosX+'px').show();
 //fontion de l'item au hover 
 $('nav a').hover(function () { 
-    //Item hovered width
+
     var hoverWidth = $(this).parent('li').width() / 2; 
     //calcule de l'hover position
     var newPosX = $(this).parent('li').position().left + (hoverWidth + 9); 

@@ -28,21 +28,29 @@
                    <div class='success'>
                    <div class='upperline'></div>
                     <h2>Tu cherche peut etre :</h2>
-                <?php } ?>
+                
             
                 <?php foreach($search->results as $_result):?>
                 <a href="raw_php/result_page/result.php?id=<?= $_result->id?>">
                 <span class='img'>
-                    <img src="http://image.tmdb.org/t/p/w75<?= $_result->backdrop_path?>" alt="">
+                    <?php if(!empty($_result->backdrop_path)){ ?>
+                        <img src="http://image.tmdb.org/t/p/w75<?= $_result->backdrop_path?>" alt="">
+                    <?php }
+                    else{ ?>
+                        
+                        <img src="ressources/img/no-image-found.jpg" alt="">
+                    <?php } ?>
                 </span>
                 <span>
                     <?= $_result->original_name ?>
                 </span>
                 </a>
                 <br>
-            <?php endforeach; }?>
+            <?php endforeach; 
+            }?>
                 </div>
             </div>
+            <?php } ?>
 
             <img class="logo" src="ressources/img/logo.svg" alt="">    
             <form action="#" method="post">

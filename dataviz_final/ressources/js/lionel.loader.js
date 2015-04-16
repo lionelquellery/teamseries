@@ -45,3 +45,9 @@ $(document).ready(function($) {
     enable_scroll();
   });
 });
+
+
+function suggest(){
+  $("input").keypress();
+;  console.log(key press .keypres());
+}

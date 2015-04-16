@@ -16,6 +16,7 @@ require ('raw_php/home/home.php');
     <body>
         <section>
             <?php if(!empty($_POST['search'])){?>
+            
             <div class="suggest"  id="hideme">
                 <a href="#" onClick="hide('hideme')" class="close">CLOSE ×</a>
 
@@ -53,7 +54,7 @@ require ('raw_php/home/home.php');
 
             <img class="logo" src="ressources/img/logo.svg" alt="">    
             <form action="#" method="post">
-                <input type="search" class="inputstyle" placeholder="Recherche ta série préférée..." name="search">    
+                <input type="search" class="inputstyle" placeholder="Search your series" name="search">    
             </form> 
 
 

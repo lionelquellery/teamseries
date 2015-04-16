@@ -50,6 +50,26 @@ require('config.php');
                			        <?php endforeach; ?>
         				    </ul>
         			</nav>
+<!--        			
+                           
+                           
+                      VOICI TES DONNES
+                            |
+                            |
+                            |
+                           \|/
+                                            -->
+<div>
+Premiere date de diffusion : <?= $serie->first_air_date ?>
+</div>
+
+<div>
+Date de diffusion du dernière apisode : <?= $serie->last_air_date ?>
+</div>
+
+<div>
+Nombre d'episodes : <?= $serie->number_of_episodes ?>
+</div>
         			<div class="seriecanvas_wrp">
                         <canvas id="seriecanvas" width="620" height="380"></canvas>
                     </div>

@@ -48,11 +48,6 @@ $number_saison = json_decode($answer);
 $answer = get_curl_request($key_series."/similar".$key);
 $similar = json_decode($answer);
 
-//echo '<pre>';
-//print_r($similar);
-//echo '</pre>';
-
-
 
 $saison_data = array();
 $ct = 0;

@@ -28,6 +28,18 @@ require('config.php');
 			<h1><?= $serie->name ?></h1> 
 			<p class="synopsis"><?= $serie_overview ?></h2>
 			<nav>
+			
+			<div>
+			    Premiere date de diffusion : <?= $serie->first_air_date ?>
+			</div>
+			
+			<div>
+			    Date de diffusion du dernière apisode : <?= $serie->last_air_date ?>
+			</div>
+			
+			<div>
+			    Nombre d'episodes : <?= $serie->number_of_episodes ?>
+			</div>
 				
 <!--				generation du canvas      -->
 				<?php if(empty($average_seasons->episodes)){ ?>

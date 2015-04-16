@@ -40,7 +40,7 @@ $(document).ready(function($) {
   }
 
   disable_scroll();
-  $("#overlay").delay(3000).animate({opacity: "0"}, 2000, function() {
+  $("#overlay").delay(5000).animate({opacity: "0"}, 700, function() {
     $(this).remove();
     enable_scroll();
   });

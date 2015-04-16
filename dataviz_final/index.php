@@ -38,7 +38,7 @@
                     <?php }
                     else{ ?>
                         
-                        <img src="ressources/img/no-image-found.jpg" alt="">
+                        <img src="ressources/img/nonDispo.svg" alt="">
                     <?php } ?>
                 </span>
                 <span>

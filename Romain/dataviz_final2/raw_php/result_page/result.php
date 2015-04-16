@@ -79,15 +79,26 @@ require('config.php');
                                 <p class="actorname">
                                     <span class="as">As </span><?= $_character->character?>
                                 </p>
+                            <div class="next2">
+                                <i class="fa fa-angle-down"></i>
+                            </div>
                         </div>
                     <?php endforeach; ?>
-         
+                    
+        
             <script>
             $('.next').click(function (e)
             {
                 e.preventDefault();
                 $('.open').removeClass('open').addClass('hidden');
                 $('.characters').removeClass('hidden').addClass('open');
+            });
+
+            $('.next2').click(function (e)
+            {
+                e.preventDefault();
+                $('.characters').removeClass('open').addClass('hidden');
+                $('.Lionel').removeClass('hidden').addClass('open');
             });
 
             $('.prec').click(function (e)
@@ -98,7 +109,22 @@ require('config.php');
             });
             </script>
                 </div>
+                 <div class="Lionel hidden">
+                    <div class="prec2">
+                        <i class="fa fa-angle-up"></i>
+                    </div>
+                    <p>osjfgdbfghdfb hkbdflhdfk</p>
+                    </div>
 		</section>
+        <script>
+          $('.prec2').click(function (e)
+            {
+                e.preventDefault();
+                $('.open').removeClass('open').addClass('hidden');
+                $('.characters').removeClass('hidden').addClass('open');
+                $('.prec2').addClass('open');
+            });
+        </script>
 	</div>
 <!--	    image de droite -->
 		<div class="right" style="background-image:url(http://image.tmdb.org/t/p/w1280<?php echo $serie->backdrop_path ?>)">

@@ -18,6 +18,7 @@ require('config.php');
 </head>
 <body>
 	<div class="main">
+<!--	logo        -->
 		<section class="left">
 			<header>
                 <a href="../../index.php"><div class="logo">Data<span class="logo-bold">Series</span></div></a>
@@ -26,10 +27,13 @@ require('config.php');
 					<button class="search"><i class="fa fa-search"></i></button>
 				</form>
 			</header>
+			
+<!--			info de la serie    -->
 			<h1><?= $serie->name ?></h1> 
 			<p class="synopsis"><?= $serie_overview ?></h2>
 			<nav>
 				
+<!--				generation du canvas      -->
 				<?php if(empty($average_seasons->episodes)){ ?>
                     <div class="synopsis"><?= $error ?></div>
                 <?php }
@@ -51,15 +55,31 @@ require('config.php');
 			    <canvas id="seriecanvas" width="620" height="380"></canvas>
             </div>
             <?php } ?>
- 
-	<script type="text/javascript" src="../../ressources/js/serie.js"></script>
-    <script>
-    	getData(<?=$_GET['id']?>)
-    </script>
 		</section>
 	</div>
+<!--	    image de droite -->
 		<div class="right" style="background-image:url(http://image.tmdb.org/t/p/w1280<?php echo $serie->backdrop_path ?>)">
-			
+     
+     
+     
+<!--        Generation chaque personnages série + image de l'acteur-->
+        <?php foreach($characters->cast as $_character): ?>
+<!--           image      -->
+        <div>
+            <img src="http://image.tmdb.org/t/p/w300<?= $_character->profile_path ?>" alt="">
+        </div>
+<!--        nom du personnage joué   -->
+        <span>
+            Personnage :<?= $_character->character?>
+        </span>
+<!--        nom de l'acteur   -->
+        <span>
+            Acteur : <?= $_character->name?>
+        </span>
+        <?php endforeach; ?>
+     
+      
+<!--          suggestions autre series   -->
        <?php if(!empty($similar->results[0])){ ?>
            <div class="white-block">
 				<i class="fa fa-angle-right"></i>
@@ -71,5 +91,11 @@ require('config.php');
             </div>
         <?php }?>
 		</div>
+		
+    <script type="text/javascript" src="../../ressources/js/serie.js"></script>
+    <script>
+    	getData(<?=$_GET['id']?>)
+    </script>
+		
 </body>
 </html>

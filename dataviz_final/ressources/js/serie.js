@@ -37,7 +37,7 @@ function init(data) {
 
             // x & y coords.
             var xCoords = repartition1Change,
-                yCoords = ((-1) * ((count * 10)/3)) + 375 - 10,
+                yCoords = ((-1) * ((count * 10)/4.5)) + 375 - 10,
                 r=20;
 
             ctx.lineTo( xCoords, yCoords);

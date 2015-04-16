@@ -1,5 +1,5 @@
 function getData(param) {
-$.getJSON( "http://127.0.0.1/dataviz/api_php/search/"+param, function( data ) {
+$.getJSON( "http://127.0.0.1/dataviz_final/api_php/search/"+param, function( data ) {
     init(data);
 });
 
@@ -9,21 +9,8 @@ function init(data) {
            ctx = canvas.getContext("2d"),
          width = canvas.width,
         height = canvas.height,
-    dataLenght = data.length,
-        hauteur = 0;
+    dataLenght = data.length;
 
-    function divise_canvas(){
-        ctx.beginPath();
-        for(h = 0; h < 10; h++){
-            var hauteur = (height/10) + hauteur;
-            ctx.stroke();
-            ctx.strokeStyle = "#000000";
-            ctx.lineWidth = "1";
-            ctx.moveTo(hauteur,0);
-            ctx.lineTo(hauteur,500);
-            ctx.fill();
-        }
-    }
 
 
     function serie(){
@@ -34,7 +21,7 @@ function init(data) {
 
         //begin drawing : point 0:0
         ctx.beginPath();
-        ctx.moveTo(20,400);
+        ctx.moveTo(0,380);
 
 
         for(i=0;i<dataLenght;i++){
@@ -50,55 +37,59 @@ function init(data) {
 
             // x & y coords.
             var xCoords = repartition1Change,
-                yCoords = ((-1) * ((count * 10)/5)) + 375 - 10,
+                yCoords = ((-1) * ((count * 10)/3)) + 375 - 10,
                 r=20;
-                
 
             ctx.lineTo( xCoords, yCoords);
-            ctx.strokeStyle = "#4397cc";
-              ctx.lineWidth = "5";
+            ctx.strokeStyle = "#cb4460";
+              ctx.lineWidth = "6";
 
             //gradient
-            var my_gradient = ctx.createLinearGradient(0, 0, 0, yCoords);
-            my_gradient.addColorStop(0, "#a6bfce");
-            my_gradient.addColorStop(1, "#fff");
+            var my_gradient = ctx.createLinearGradient(0, 0, 0, 380);
+            my_gradient.addColorStop(0, "#eec1cb");
+            my_gradient.addColorStop(1, "#faecef");
             ctx.fillStyle = my_gradient;
 
-            //add "a" Element
-            var $linkSeries = $("<a>", { class: "link_series transition", href:"#", "data-season" : i});
-            $(".seriecanvas_wrp").append($linkSeries);
-            $linkSeries.css({ left:(xCoords-11)+"px", top:(yCoords-13)+"px"});
 
-
-
-            //prevent default
-            $(".seriecanvas_wrp a").on('click',function(e){
-                e.preventDefault();
-
-                var $this = $(this),
-                   season = $this.data('season');
-                   // console.log($('input').eq(i));
-
+            $('input').click(function(){
+                var inputName = $(this).attr('name');
+                inputName = inputName -1;
             });
+            //add "a" Element
+            var $linkSeries = $("<a>", { class: "link_series transition", href:"#", "data-season" : i, onclick:"$('input').prop('tagName')"});
+            $(".seriecanvas_wrp").append($linkSeries);
+            $linkSeries.css({ left:(xCoords-10)+"px", top:(yCoords-13)+"px"});
+            // PROPORTIONAL POINTS = CHANGE DE CSS INTO ".link_series:after{display:none; .link_series: all comment actived}"
+            // $linkSeries.css({ left:(xCoords-12)+"px", top:(yCoords-19)+"px", width:10+(1/yCoords)*1000+"px", height:10+(1/yCoords)*1000+"px", background:'white', border: 'solid 3px #cb4460', borderRadius:"1000px"});
         }
         //draw canvas
         ctx.lineJoin = "round";
         ctx.stroke();
-        ctx.lineTo(570,380);
-        ctx.moveTo(570,380);
+        ctx.lineTo(569,380);
+        ctx.moveTo(569,380);
         ctx.fill();
 
+        // on click : prevent default
+        $(".seriecanvas_wrp a").click(function(e){
+            e.preventDefault();
+
+            var $this = $(this),
+               season = $this.data('season');
+               console.log(season);
+
+        });
     }
     serie();
 
 
 
-    $('ul li input').click(function(){
+    $('input').click(function(){
         var inputName = $(this).attr('name');
         inputName = inputName -1;
-        
+
+        $(canvas).stop().animate({opacity: 0}, 0).delay(800).animate({opacity: 1}, 700);
+                                            
         ctx.clearRect ( 0 , 0 , width, height );
-        divise_canvas();
         $('.seriecanvas_wrp a').remove();
         
         if(inputName === -1)
@@ -107,7 +98,7 @@ function init(data) {
         }
         else{
             ctx.beginPath();
-            ctx.moveTo(5,400);
+            ctx.moveTo(0,380);
 
             var dataLenght2 = data[inputName].length,
               repartition2       = (width) / dataLenght2,
@@ -123,23 +114,23 @@ function init(data) {
                     r=10; 
 
                 ctx.lineTo( xCoords, yCoords);
-                ctx.strokeStyle="#a6bfce)";
-                ctx.lineWidth = "5";
+                ctx.strokeStyle="#cb4460)";
+                ctx.lineWidth = "6";
 
                 //add "a" Element
                 var $linkSeries = $("<a>", { class: "link_series transition", href:"#"});
                 $(".seriecanvas_wrp").append($linkSeries);
-                $linkSeries.css({ left:(xCoords-11)+"px", top:(yCoords-13)+"px"});
+                $linkSeries.css({ left:(xCoords-10)+"px", top:(yCoords-13)+"px"});
             }
 
             var my_gradient = ctx.createLinearGradient(0, 0, 0, 380);
-            my_gradient.addColorStop(0, "#4397cc");
-            my_gradient.addColorStop(1, "#ffffff");
+            my_gradient.addColorStop(0, "#eec1cb");
+            my_gradient.addColorStop(1, "#faecef");
             ctx.fillStyle = my_gradient;
             ctx.lineJoin = "round";
             ctx.stroke();
-            ctx.lineTo(610,380);
-            ctx.moveTo(610,380);
+            ctx.lineTo(588,380);
+            ctx.moveTo(588,380);
             ctx.fill();
         }
     });

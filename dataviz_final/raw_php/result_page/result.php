@@ -12,7 +12,6 @@ require('config.php');
 	<meta description="">
     <link rel="stylesheet" href="../../ressources/css/reset.css">
 	<link rel="stylesheet" href="../../ressources/css/result/style.css">
-	<link rel="stylesheet" href="../../ressources/css/result/index.css">
 	<link rel="stylesheet" href="../../ressources/font/font-awesome/css/font-awesome.min.css">
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 

@@ -32,6 +32,22 @@ require('config.php');
 			<h1><?= $serie->name ?></h1> 
 			<p class="synopsis"><?= $serie_overview ?></h2>
 			<nav>
+			
+<!--        Generation chaque personnages série + image de l'acteur-->
+        <?php foreach($characters->cast as $_character): ?>
+        <!--           image      -->
+        <div>
+            <img src="http://image.tmdb.org/t/p/w300<?= $_character->profile_path ?>" alt="">
+        </div>
+<!--        nom du personnage joué   -->
+        <span>
+            Personnage :<?= $_character->character?>
+        </span>
+<!--        nom de l'acteur   -->
+        <span>
+            Acteur : <?= $_character->name?>
+        </span>
+        <?php endforeach; ?>
 				
 <!--				generation du canvas      -->
 				<?php if(empty($average_seasons->episodes)){ ?>

@@ -1,19 +1,25 @@
 @font-face {
     font-family: Gotham-ultra;
-    src: url(../../font/Gotham-Ultra.otf);
-    src: url(../../font/Gotham-Ultra.woff);
+    src: url('../../font/Gotham-Ultra.otf') format('truetype');
+    src: url('../../font/Gotham-Ultra.woff') format('woff');
+}
 
+@font-face {
  	font-family: Gotham-book;
-    src: url(../../font/Gotham-book.otf);
-    src: url(../../font/Gotham-book.woff);
+    src: url('../../font/Gotham-book.otf') format('truetype');
+    src: url('../../font/Gotham-book.woff') format('woff');
+}
 
+@font-face {
     font-family: Gotham-Thin;
-    src: url(../../font/Gotham-Thin.otf);
-    src: url(../../font/Gotham-Thin.woff);
+    src: url('../../font/Gotham-Thin.otf') format('truetype');
+    src: url('../../font/Gotham-Thin.woff') format('woff');
+}
 
+@font-face {
     font-family: Gotham-Medium;
-    src: url(../../font/Gotham-Medium.otf);
-    src: url(../../font/Gotham-Medium.woff);
+    src: url('../../font/Gotham-Medium.otf') format('truetype');
+    src: url('../../font/Gotham-Medium.woff') format('woff');
 
 }
 
@@ -238,19 +244,14 @@ a{
 /******* CANVAS ****/
 
 .seriecanvas_wrp{width: 620px; height: 380px; margin-bottom: 5px; position: relative; overflow: hidden;}
-.link_series {width: 20px; height: 20px; position: absolute;   z-index: 90; opacity: 1; border-radius: 100px; /*  background: white; border: solid 5px #cb4460;*/
+.link_series {width: 20px; height: 20px; position: absolute;   z-index: 90; opacity: 1; 
   -webkit-transform: translateY(380px);
   -moz-transform: translateY(380px);
   -ms-transform: translateY(380px);
   -o-transform: translateY(380px);
   -transform: translateY(380px);
+/*  opacity: 0;*/
     -webkit-animation: example 0.5s forwards;
-
-    -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
-  -transform: scale(0);
 }
 
 .link_series:after {
@@ -261,18 +262,23 @@ a{
   height:20px;
   border-radius: 40px;
   background: white;  
-  border: solid 3px #cb4460;
+  border: solid 3px #4397cc;
   -webkit-transition : all 0.2s ease;
           transition : all 0.2s ease;
 }
 
-.link_series:hover:after{
+.link_series:hover:after {
   -webkit-transform: scale(1.5);
   -moz-transform: scale(1.5);
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
   -transform: scale(1.5);
 }
+
+
+/* .link_series:hover{ height: 40px; width: 40px;
+  transform-origin: 50% 50%;
+} */
 
 .transition {
   -webkit-transition : all 0.2s ease;
@@ -544,39 +550,41 @@ a{
       -ms-animation-delay: 2.5s;
           animation-delay: 2.5s;
 }
-.link_series:nth-child(48) {
+link_series:nth-child(48) {
  -webkit-animation-delay: 2.55s;
       -ms-animation-delay: 2.55s;
           animation-delay: 2.55s;
 }
-.link_series:nth-child(49) {
+link_series:nth-child(49) {
  -webkit-animation-delay: 2.60s;
       -ms-animation-delay: 2.60s;
           animation-delay: 2.60s;
 }
-.link_series:nth-child(50) {
+link_series:nth-child(50) {
  -webkit-animation-delay: 2.65s;
       -ms-animation-delay: 2.65s;
           animation-delay: 2.65s;
 }
-.link_series:nth-child(51) {
+link_series:nth-child(51) {
  -webkit-animation-delay: 2.70s;
       -ms-animation-delay: 2.70s;
           animation-delay: 2.70s;
 }
-.link_series:nth-child(52) {
+link_series:nth-child(52) {
  -webkit-animation-delay: 2.75s;
       -ms-animation-delay: 2.75s;
           animation-delay: 2.75s;
 }
-.link_series:nth-child(53) {
+link_series:nth-child(53) {
  -webkit-animation-delay: 2.80s;
       -ms-animation-delay: 2.80s;
           animation-delay: 2.80s;
 }
-.link_series:nth-child(54) {
+link_series:nth-child(54) {
  -webkit-animation-delay: 2.85s;
       -ms-animation-delay: 2.85s;
           animation-delay: 2.85s;
 }
+
+
 

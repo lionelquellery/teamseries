@@ -164,6 +164,22 @@ li {
   cursor: pointer
 }
 
+.prec2 {
+  position: fixed;
+  width: 100px;
+  left: 23%;
+  top: 10px;
+}
+
+.prec2 i {
+  font-size: 50px;
+  -webkit-transform: scaleX(1.3);
+  -ms-transform: scaleX(1.3);
+      transform: scaleX(1.3);
+  color: #ddd;
+  cursor: pointer
+}
+
 .prec {
   position: fixed;
   width: 100px;
@@ -181,21 +197,7 @@ li {
 }
 
 
-.prec2 {
-  position: fixed;
-  width: 100px;
-  left: 23%;
-  top: 10px;
-}
 
-.prec2 i {
-  font-size: 50px;
-  -webkit-transform: scaleX(1.3);
-  -ms-transform: scaleX(1.3);
-      transform: scaleX(1.3);
-  color: #ddd;
-  cursor: pointer
-}
 
 .open {
     opacity:1;

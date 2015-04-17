@@ -1,1 +1,0 @@
-function hide(e){var l=document.getElementById(e);l.style.color="red",l.style.display="none",console.log(l)}window.sr=new scrollReveal;

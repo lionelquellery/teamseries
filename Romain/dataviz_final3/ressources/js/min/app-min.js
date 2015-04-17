@@ -1,0 +1,1 @@
+function hide(o){var i=document.getElementById(o);i.style.display="none"}$(window).scroll(function(){$(".media").each(function(){var o=$(this).offset().top,i=$(window).scrollTop()+$(window).height();i-60>o&&$(this).addClass("opacity")})});

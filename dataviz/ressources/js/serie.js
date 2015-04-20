@@ -18,7 +18,8 @@ else{
 
 
 function getData(param) {
-    $.getJSON( "http://URL DU SITE/Dataviz/api_php/search/"+param, function( data ) {
+    $.getJSON( "http://URL DE VOTRE SITE/dataviz/api_php/search/"+param, function( data ) {
+//           (exemple : http://thomasvictoria.fr/dataviz/api_php/search/)
         init(data);
     });   
 }

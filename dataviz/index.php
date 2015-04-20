@@ -64,15 +64,17 @@ require ('config/home/config.php');
             <p class="popular">Most popular TV shows :</p>
             <?php for($i = 0; $i < 19; $i++){?>    
             <div class="media" data-sr="enter top, ease down 20%">
-<!--               <?php if(!empty($data->results[$i]->backdrop_path)){ ?> -->
-                    <img class="media__image" src="http://image.tmdb.org/t/p/w600<?= $data->results[$i]->backdrop_path?>" alt="" />
-                <?php}
+               <?php if(empty($data->results[$i]->backdrop_path)){ ?> 
+                   <img src="ressources/img/nonDispoSmall.svg" alt="">
+                <?php }
                 else{ ?>
-                
+                    <img class="media__image" src="http://image.tmdb.org/t/p/w600<?= $data->results[$i]->backdrop_path?>" alt="" />
                 <?php } ?>
-                <a href="result.php?id=<?= $data->results[$i]->id ?>"><div class="media__body">
-                    <h2><?= $data->results[$i]->original_name?></h2>
-                    </div></a>
+                <a href="result.php?id=<?= $data->results[$i]->id ?>">
+                    <div class="media__body">
+                        <h2><?= $data->results[$i]->original_name?></h2>
+                    </div>
+                </a>
             </div>
 
             <?php } ?>

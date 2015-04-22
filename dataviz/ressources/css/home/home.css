@@ -10,7 +10,7 @@ section{
 
 .inputstyle{
   width: 60%; 
-  margin: auto;
+  //margin: auto;
   border-bottom: solid 1px !important;
   margin-top: 20px;
   font-size: 1.6em;

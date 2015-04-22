@@ -19,7 +19,7 @@ else{
 
 function getData(param) {
     $.getJSON( "http://URL DE VOTRE SITE/dataviz/api_php/search/"+param, function( data ) {
-//           (exemple : http://thomasvictoria.fr/dataviz/api_php/search/)
+        //           (exemple : http://thomasvictoria.fr/dataviz/api_php/search/)
         init(data);
     });   
 }
@@ -27,10 +27,10 @@ function getData(param) {
 function init(data) {
 
     var canvas = document.getElementById("seriecanvas"),
-           ctx = canvas.getContext("2d"),
-         width = canvas.width,
+        ctx = canvas.getContext("2d"),
+        width = canvas.width,
         height = canvas.height,
-    dataLenght = data.length;
+        dataLenght = data.length;
 
     //fade canvas
     $(canvas).animate({opacity: 0}, 0).stop().delay(800).stop().animate({opacity: 1}, 700);
@@ -38,9 +38,9 @@ function init(data) {
 
     function serie(){
 
-           var dataLenghtz = data.length,
-              repartition1 = width / dataLenghtz,
-        repartition1Change = (-0.5) * (repartition1);
+        var dataLenghtz = data.length,
+            repartition1 = width / dataLenghtz,
+            repartition1Change = (-0.5) * (repartition1);
 
         //begin drawing
         ctx.beginPath();
@@ -68,7 +68,7 @@ function init(data) {
 
             ctx.lineTo( xCoords, yCoords);
             ctx.strokeStyle = "#73afa3";
-              ctx.lineWidth = "6";
+            ctx.lineWidth = "6";
 
             //gradient
             var my_gradient = ctx.createLinearGradient(0, 0, 0, 380);
@@ -101,22 +101,22 @@ function init(data) {
         $(canvas).animate({opacity: 0}, 0).stop().delay(800).stop().animate({opacity: 1}, 700);
         ctx.clearRect ( 0 , 0 , width, height );
         $('.seriecanvas_wrp a').remove();
-        
+
         if(inputName === -1)
         {
             serie();
             tryhard();
         }
         else{
-        //change text of legend
-        $('.txt-episode-season').animate({opacity: 0}, 350, function(){$(this).replaceWith("<p class='txt-legend txt-episode-season'>EPISODES</p>")}).animate({opacity: 1}, 350);
-        $('.txt-grade').animate({opacity: 0}, 350, function(){$(this).replaceWith("<p class='txt-legend txt-grade'>GRADE</p>")}).animate({opacity: 1}, 350); 
+            //change text of legend
+            $('.txt-episode-season').animate({opacity: 0}, 350, function(){$(this).replaceWith("<p class='txt-legend txt-episode-season'>EPISODES</p>")}).animate({opacity: 1}, 350);
+            $('.txt-grade').animate({opacity: 0}, 350, function(){$(this).replaceWith("<p class='txt-legend txt-grade'>GRADE</p>")}).animate({opacity: 1}, 350); 
             ctx.beginPath();
             ctx.moveTo(0,380);
 
             var dataLenght2 = data[inputName].length,
-              repartition2       = (width) / dataLenght2,
-              repartition1Change = (-0.5)*(repartition2);
+                repartition2       = (width) / dataLenght2,
+                repartition1Change = (-0.5)*(repartition2);
 
             for(i=0;i<dataLenght2;i++){
                 repartition1Change = repartition1Change + repartition2;
@@ -136,7 +136,7 @@ function init(data) {
                 $(".seriecanvas_wrp").append($linkSeries);
                 $linkSeries.css({ left:(xCoords-10)+"px", top:(yCoords-13)+"px"});
 
-                
+
                 $linkSeries.append( "<span class='name-of-ep'>EP "+(i+1)+"</span>" );
             }
 
@@ -155,23 +155,23 @@ function init(data) {
     function tryhard(){
         $('.important').click( function(){
 
-            
+
             $('.active').removeClass('active');
             var detect = $(this).attr('data-season'),
                 add_active = parseInt(detect) + 1,
                 input = $('input[name='+add_active+']');
-                coord_input = $(input).offset().left-100;
-//                coord_input = coord_input - 100;
+            coord_input = $(input).offset().left-100;
+            //                coord_input = coord_input - 100;
             console.log(coord_input);
-            
-            
-            
+
+
+
             $(".seasons").animate({ 
-            scrollLeft: $(input).offset().left-350 
-        }, 600);
+                scrollLeft: $(input).offset().left-350 
+            }, 600);
             $(input).addClass('active');
-            
-            
+
+
             ctx.clearRect ( 0 , 0 , width, height );
 
             $('.seriecanvas_wrp a').remove();
@@ -188,8 +188,8 @@ function init(data) {
             ctx.moveTo(0,380);
 
             var dataLenght2 = data[detect].length,
-            repartition2       = (width) / dataLenght2,
-            repartition1Change = (-0.5)*(repartition2);
+                repartition2       = (width) / dataLenght2,
+                repartition1Change = (-0.5)*(repartition2);
 
             for(i=0;i<dataLenght2;i++){
                 repartition1Change = repartition1Change + repartition2;
@@ -211,39 +211,39 @@ function init(data) {
                 $linkSeries.append( "<span class='name-of-ep'>EP "+(i+1)+"</span>" );
             }
 
-                var my_gradient = ctx.createLinearGradient(0, 0, 0, 380);
-                my_gradient.addColorStop(0, "#73afa3");
-                my_gradient.addColorStop(1, "#eff8f7");
-                ctx.fillStyle = my_gradient;
-                ctx.lineJoin = "round";
-                ctx.stroke();
-                ctx.lineTo(588,380);
-                ctx.moveTo(588,380);
-                ctx.fill();
+            var my_gradient = ctx.createLinearGradient(0, 0, 0, 380);
+            my_gradient.addColorStop(0, "#73afa3");
+            my_gradient.addColorStop(1, "#eff8f7");
+            ctx.fillStyle = my_gradient;
+            ctx.lineJoin = "round";
+            ctx.stroke();
+            ctx.lineTo(588,380);
+            ctx.moveTo(588,380);
+            ctx.fill();
 
         });
     }
 }
 
 $('.next2').click(function(){
-    
+
     $('.first_graph').delay(1000).animate({opacity:'1'},1000);
     $('.status').delay(1000).animate({width:'75%'},2000);
     $('.last').delay(2200).animate({opacity:'1'},1000);
-    
+
     $('.count').each(function () {
-    $(this).delay(1000).animate({opacity:'1'},1000);
-    $(this).prop('Counter',0).animate({
-        Counter: $(this).children('input').attr('name')
-    }, {
-        duration: 3000,
-        easing: 'swing',
-        step: function (now) {
-            $(this).text(Math.ceil(now));
-        }
+        $(this).delay(1000).animate({opacity:'1'},1000);
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).children('input').attr('name')
+        }, {
+            duration: 3000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
     });
-});
-    
+
 })
 
 
@@ -256,9 +256,13 @@ else{
 }
 
 $('input').click(function(){
-                $('.active').removeClass('active');
-                $(this).addClass('active');
-            });
+    $('.active').removeClass('active');
+    $(this).addClass('active');
+});
+
+// Fonction qui detecte le scroll de la souris et le stock dans x
+// Il applique ensuite les changement de class et l'animation de la page 'Lionel' 
+// en fonction du scroll de la souris
 
 $('a.important').on('click' ,function(){
     console.log('yo');
@@ -266,30 +270,75 @@ $('a.important').on('click' ,function(){
     console.log(serie);
 });
 
-$('.next').click(function (e)
-            {
-                e.preventDefault();
-                $('.open').removeClass('open').addClass('hidden');
-                $('.characters').removeClass('hidden').addClass('open');
+var x = 0;
+$('body').bind('mousewheel', function(e){
+
+    var scroll  = parseInt(e.originalEvent.wheelDelta);
+    x = x + scroll;
+    console.log(x);
+
+    if(x > -1000){
+
+        $('.popularity').removeClass('passed').addClass('actual');
+        $('.characters').removeClass('actual').addClass('waiting');
+
+    }
+    else if( x < -1000 && x > -2000){
+
+        $('.popularity').removeClass('actual').addClass('passed');
+        $('.characters').removeClass('waiting').addClass('actual');
+        $('.characters').removeClass('passed').addClass('actual');
+        $('.Lionel').removeClass('actual').addClass('waiting');
+
+    }
+    else if( x < -2000){
+
+        $('.characters').removeClass('actual').addClass('passed');
+        $('.Lionel').removeClass('waiting').addClass('actual');
+
+        $('.first_graph').delay(1000).animate({opacity:'1'},1000);
+        $('.status').delay(1000).animate({width:'75%'},2000);
+        $('.last').delay(2200).animate({opacity:'1'},1000);
+
+        $('.count').each(function () {
+            $(this).delay(1000).animate({opacity:'1'},1000);
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).children('input').attr('name')
+            }, {
+                duration: 3000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
             });
+        });
+    }
+})
+
+
+$('.next').click(function ()
+                 {
+    $('.popularity').removeClass('actual').addClass('passed');
+    $('.characters').removeClass('waiting').addClass('actual');
+});
 
 $('.next2').click(function (e)
-            {
-                e.preventDefault();
-                $('.characters').removeClass('open').addClass('hidden');
-                $('.Lionel').removeClass('hidden').addClass('open');
-            });
+                  {
+    $('.characters').removeClass('actual').addClass('passed');
+    $('.Lionel').removeClass('waiting').addClass('actual');
+});
 
 $('.prec').click(function (e)
-            {
-                e.preventDefault();
-                $('.open').removeClass('open').addClass('hidden');
-                $('.popularity').removeClass('hidden').addClass('open');
-            });
+                 {
+    $('.popularity').removeClass('passed').addClass('actual');
+    $('.characters').removeClass('actual').addClass('waiting');
+});
 
 $('.prec2').click(function (e)
-            {
-                e.preventDefault();
-                $('.open').removeClass('open').addClass('hidden');
-                $('.characters').removeClass('hidden').addClass('open');
-            });
+                  {
+    $('.characters').removeClass('passed').addClass('actual');
+    $('.Lionel').removeClass('actual').addClass('waiting');
+});
+
+
+

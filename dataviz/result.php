@@ -34,8 +34,9 @@ require('config/result_page/config.php');
                 <header>
                     <a href="index.php"><div class="logo">Data<span class="logo-bold">Series</span></div></a>
                 </header>
-                <div class="clear"></div>
-                <div class="popularity open">
+                
+                <div class="popularity actual transition_lente">
+                   <div class="clear"></div>
                     <!--			info de la serie    -->
                     <h1><?= $serie->name ?></h1>
                     <p class="note">TV Show's note :   <?= $serie->vote_average ?> / 10</p>
@@ -86,7 +87,7 @@ require('config/result_page/config.php');
                     </div>
                 </div>
 
-                <div class="characters hidden">
+                <div class="characters waiting transition_lente">
                     <div class="prec">
                         <i class="fa fa-angle-up"></i>
                     </div>
@@ -124,14 +125,14 @@ require('config/result_page/config.php');
                         <?php } ?>
                     </div>
                     <?php } ?>
-                    <!-- Revoir la fleche  du dropdow  -->
+
                     <div class="next2">
                         <i class="fa fa-angle-down"></i>
                     </div>
 
                 </div>
 
-                <div class="Lionel hidden">
+                <div class="Lionel waiting transition_lente">
                     <div class="prec2">
                         <i class="fa fa-angle-up"></i>
                     </div >

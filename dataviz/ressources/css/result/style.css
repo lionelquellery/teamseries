@@ -25,13 +25,10 @@
 html, body {
   height:100%;
   width:100%;
-  zoom: 0.9;
-
-
+    zoom: 0.9;
 }
 
 body {
-  height: 100%;
   min-height: 100%;
   overflow: hidden;
   font-family: Gotham-book;
@@ -113,7 +110,7 @@ h2 {
     font-size: 1em;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-top: 20px;
+    margin-top: 10px;
     max-width: 100%;
     text-align: left;
 }
@@ -216,30 +213,9 @@ li {
   cursor: pointer
 }
 
-.open {
-    opacity:1;
-  -webkit-animation-name: 'slideIn';
-          animation-name: 'slideIn';
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-timing-function:ease;
-          animation-timing-function:ease;
-  animation-fil-mode: both;
-}
 
 
 /********** CHARACTERS ***********/
-
-.characters {
-  width: 100%;
-  height: 100%;
-}
-
-.hidden {
-  opacity: 0;
-  display: none;
-  overflow: scroll;
-}
 
 .col-half {
   float:left;
@@ -507,7 +483,6 @@ li .seasons input:hover .seasons input :hover, .seasons input :hover{
   -ms-transform: translateY(380px);
   -o-transform: translateY(380px);
   -transform: translateY(380px);
-/*  opacity: 0;*/
     -webkit-animation: example 0.5s forwards;
 }
 
@@ -531,11 +506,6 @@ li .seasons input:hover .seasons input :hover, .seasons input :hover{
   -o-transform: scale(1.5);
   -transform: scale(1.5);
 }
-
-
-/* .link_series:hover{ height: 40px; width: 40px;
-  transform-origin: 50% 50%;
-} */
 
 .transition {
   -webkit-transition : all 0.2s ease;
@@ -875,7 +845,7 @@ link_series:nth-child(54) {
 }
 
 .last{
-    margin-left: 27%;
+    margin-left: 74%;
     opacity: 0;
 }
 .first_graph{
@@ -905,7 +875,6 @@ link_series:nth-child(54) {
   width: 200px;
 	height: 200px;
 	background: #ffffff;
-/*	border-radius: 100px;*/
   float:left;
   margin:5px;
 }
@@ -937,6 +906,11 @@ link_series:nth-child(54) {
     transition: all 1s ease;
 }
 
+.transition_lente{
+    -webkit-transition: all 1.5s ease;
+    transition: all 1.5s ease;
+}
+
 .count{
     opacity: 0;
 }
@@ -947,3 +921,43 @@ link_series:nth-child(54) {
 .bulle .counter{
     margin-left: 10%;
 }
+
+/* NAIMATIONS SCROLL*/
+
+
+.actual{top: 0%}
+.waiting{top: 100%;}
+.passed{top: -100%;}
+
+
+.popularity, .characters, .Lionel{
+    
+    position: absolute;
+    width: 600px;
+    height: 750px;
+    margin-top: 60px;
+    
+}
+
+.left{
+    width: 800px;
+    height: 1000px;
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

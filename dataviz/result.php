@@ -122,7 +122,7 @@ require('config/result_page/config.php');
                         <?php } ?>
                     </div>
                     <?php } ?>
-
+                    <!-- Revoir la fleche  du dropdow  -->
                     <div class="next2">
                         <i class="fa fa-angle-down"></i>
                     </div>

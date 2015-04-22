@@ -10,6 +10,8 @@ require('config/result_page/config.php');
         <meta charset="UTF-8">
         <title><?= $serie->name ?></title>
         <meta description="">
+        <meta name="viewport" content="initial-scale=0.2">
+        <meta name="viewport" content="width=device-width,user-scalable=no">
         <link rel="stylesheet" href="ressources/css/reset.css">
         <link rel="stylesheet" href="ressources/css/result/style.css">
         <link rel="stylesheet" href="ressources/font/font-awesome/css/font-awesome.min.css">

@@ -25,6 +25,9 @@
 html, body {
   height:100%;
   width:100%;
+  zoom: 0.9;
+
+
 }
 
 body {
@@ -884,7 +887,7 @@ link_series:nth-child(54) {
     height: 1px;
     width: 1px;
     background: #73afa3;
-    margin-left: 12%;
+    margin-left: 10%;
     margin-top: 5.9%;
 }
 
